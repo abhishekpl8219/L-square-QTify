@@ -1,16 +1,11 @@
-import { useNavigate } from "react-router-dom";
-import logo from "../../Assets/Logo1.png";
-import styles from "../Navbar/navbar.module.css";
+import React from "react";
+import styles from "./Logo.module.css";
+import LogoImg from "../../Assets/Logo1.png";
+
 const Logo = () => {
-  let navigate = useNavigate();
   return (
-    <div>
-      <img
-        src={logo}
-        alt="Logo"
-        className={styles.img}
-        onClick={() => navigate("/")}
-      />
+    <div className={styles.logoDiv}>
+      <img src={LogoImg} width={67} alt="logo" />
     </div>
   );
 };

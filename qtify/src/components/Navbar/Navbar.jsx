@@ -1,41 +1,16 @@
-import Logo from "../Logo/Logo";
-import Search from "../Search/Search";
-import Button from "../Button/Button";
-import { useEffect, useState } from "react";
-import Feedback from "../Feedback/Feedback";
+import React from "react";
 import styles from "./navbar.module.css";
+import Logo from "../Logo/Logo";
+import SearchBar from "../SearchBar/SearchBar";
+import Button from "../Button/Button";
 
-const Navbar = ({ data, page, songsData }) => {
-  const [isFeedbackClicked, setIsFeedbackClicked] = useState(false);
-
-  const handleClick = () => {
-    setIsFeedbackClicked(!isFeedbackClicked);
-  };
-
-  useEffect(() => {
-    let feedback = document.getElementById("feedback");
-    let body = document.body;
-    if (isFeedbackClicked) {
-      body.style.overflowY = "hidden";
-      feedback?.classList.add("feedbackClicked");
-    } else {
-      body.style.overflowY = "auto";
-      feedback?.classList.remove("feedbackClicked");
-    }
-  }, [isFeedbackClicked]);
-
+const Navbar = () => {
   return (
     <>
-      {isFeedbackClicked && (
-        <Feedback onClose={() => setIsFeedbackClicked(false)} />
-      )}
-      <nav className={styles.nav}>
+      <nav className={styles.navbar}>
         <Logo />
-        <Search data={page === "home" ? data : songsData} page={page} />
-        <Button
-          text="GIVE FEEDBACK"
-          eventHandler={{ event: "onClick", handler: handleClick }}
-        />
+        <SearchBar search={"Search a song of your choice"} />
+        <Button children={"Give Feedback"} />
       </nav>
     </>
   );

@@ -9,7 +9,7 @@ import {
   fetchNewAlbum,
   fetchSongs,
   fetchGenres,
-} from "../api/api";
+} from "../../api/api";
 import { FAQs } from "../FAQs/FAQs";
 import Footer from "../Footer/Footer";
 //import AudioBar from "../Audio Bar/AudioBar";
