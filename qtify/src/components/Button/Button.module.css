@@ -1,6 +1,7 @@
 .button {
     background-color: var(--color-black);
-    color: var(--color-primary);
+
+    color:  rgb(27, 187, 27);
     border-radius: 12px;
     cursor: pointer;
     font-family: "Poppins", sans-serif;
